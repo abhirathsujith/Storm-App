@@ -77,15 +77,19 @@ struct WeatherView: View {
                 Spacer()
                 
                 VStack(alignment: .leading, spacing: 21) {
-                    Text("Weather now")
+                    Text("Weather Near You")
                         .bold().padding(.bottom)
+                        .foregroundColor(Color(red: 0.03137254901960784, green: 0.054901960784313725, blue: 0.17254901960784313))
                     
                     HStack{
-                        WeatherRow(logo: "thermometer", name: "Min temp", value: (weather.main.tempMin.roundDouble() + "°" ))
+                        WeatherRow(logo: "thermometer", name: "Min Temp", value: (weather.main.tempMin.roundDouble() + "°" ))
+                            .foregroundColor(Color(red: 0.1450980392156863, green: 0.4549019607843137, blue: 0.6627450980392157))
+                        
                         
                         Spacer()
                         
-                        WeatherRow(logo: "thermometer", name: "Max temp", value: (weather.main.tempMax.roundDouble() + "°" ))
+                        WeatherRow(logo: "thermometer", name: "Max Temp   ", value: (weather.main.tempMax.roundDouble() + "°" ))
+                            .foregroundColor(Color(red: 0.9647058823529412, green: 0.2784313725490196, blue: 0.2784313725490196))
                     }
                     
                     HStack{
@@ -93,7 +97,8 @@ struct WeatherView: View {
                         
                         Spacer()
                         
-                        WeatherRow(logo: "thermometer", name: "Max temp", value: (weather.main.tempMax.roundDouble() + "°" ))
+                        WeatherRow(logo: "thermometer", name: "Wind Speed", value: (weather.wind.speed.roundDouble() + "m/s" ))
+                            .foregroundColor(Color(red: 0.00392156862745098, green: 0.00392156862745098, blue: 0.47843137254901963))
                     }
 
                 }
@@ -107,7 +112,7 @@ struct WeatherView: View {
             
         }
         .edgesIgnoringSafeArea(.bottom)
-        .background(Color(hue: 0.066, saturation: 1.0, brightness: 1.0))
+        .background(Color(red: 0.34901960784313724, green: 0.6705882352941176, blue: 0.8901960784313725))
         .preferredColorScheme(.dark)
     }
 }

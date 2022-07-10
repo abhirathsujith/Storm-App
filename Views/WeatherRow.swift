@@ -15,6 +15,7 @@ struct WeatherRow: View {
     var body: some View {
         HStack(spacing: 20) {
             Image(systemName: logo)
+                .foregroundColor(Color(red: 0.12156862745098039, green: 0.22745098039215686, blue: 0.5764705882352941))
                 .font(.title2)
                 .frame(width: 20, height: 20)
                 .padding()
@@ -29,6 +30,7 @@ struct WeatherRow: View {
                 Text(value)
                     .bold()
                     .font(.title)
+                    .foregroundColor(Color(hue: 0.583, saturation: 0.465, brightness: 0.315))
             }
         }
     }
